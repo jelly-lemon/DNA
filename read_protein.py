@@ -1,6 +1,8 @@
 """
 读取蛋白质序列
 """
+import os
+
 import numpy as np
 import random
 
@@ -8,9 +10,43 @@ from math import floor
 
 convert_dict = {'A': 1, 'C': 2, 'D': 3, 'E': 4, 'F': 5, 'G': 6, 'H': 7, 'I': 8, 'K': 9,
                 'L': 10, 'M': 11, 'N': 12, 'P': 13, 'Q': 14, 'R': 15, 'S': 16, 'T': 17,
-                'V': 18, 'W': 19, 'Y': 20}
+                'V': 18, 'W': 19, 'Y': 20, 'X':0}
 
 illegal_char = {'B', 'J', 'O', 'U', 'X', 'Z'}
+
+def to_number_array(original_str: str):
+    #
+    # 检查
+    #
+    if original_str in ("", "\n"):
+        raise ValueError("传入的蛋白质序列为空串")
+
+    #
+    # 去掉末尾的 \n
+    #
+    original_str = original_str.replace("\n", "")
+    length = len(original_str)
+
+    #
+    # 不足 1000 则补齐
+    #
+    if length < 1000:
+        dif = 1000 - length  # 差额，需要补多少个字母
+        new_str = original_str + "X" * dif
+    else:
+        new_str = original_str[:1000]  # 大于等于 1000 时则只截取前 1000 个字符
+
+    #
+    # 转为数字矩阵
+    #
+    number_arr = []
+    for c in new_str:
+        number_arr += [convert_dict[c]]
+
+    number_arr = np.array(number_arr, dtype=np.uint8)
+    return number_arr
+
+
 
 def to_onehot_matrix(original_str: str) -> np.ndarray:
     """
@@ -123,24 +159,20 @@ def replace(original_str: str) -> str:
     return str(new_str)
 
 
-def fix_data():
+def fix_data(file_path: str):
     """
     去掉原始文件中的标识行和不合法字符
 
-    :return:
+    可以对所有 fasta 文件调用该函数
     """
-    # positive.fasta
-    # file_path = "./data/protein_sequence/equal/positive.fasta"
-    # new_file_path = "./data/protein_sequence/equal/positive_fixed.txt"
-    # negative.fasta
-    file_path = "./data/protein_sequence/equal/negative.fasta"
-    new_file_path = "./data/protein_sequence/equal/negative_fixed.txt"
+    file_name = os.path.basename(file_path).split('.')[0]
+    new_file_path = os.path.abspath(os.path.dirname(file_path)) + "/" + file_name + "_fixed.txt"
 
     with open(file_path) as file, open(new_file_path, "w") as new_file:
         # 读取标识行
         line = file.readline()
         while line:
-            # 读取蛋白质序列行
+            # 读取蛋白质序列行（\r 直接忽略，不会认为有换行）
             line = file.readline()
             # 替换不合法字符（不是氨基酸）
             line = replace(line)
@@ -151,18 +183,162 @@ def fix_data():
         file.close()
         new_file.close()
 
+def get_species():
+    """
+    获取指定物种的蛋白质序列
 
-def test():
-    file_path = "./data/protein_sequence/equal/positive_fixed.txt"
-    with open(file_path) as file:
-        lines = file.readlines()
-        print(lines[:5])
-        random.shuffle(lines)
-        print(lines[:5])
+    包含 DNA-binding 和 非 DNA-binding
+    标签行也保留
+    去掉小于40或大于1000的序列
+    替换不合法氨基酸字符为 X
+    物种名字有 Human, Mouse, Rice
+    """
+    species_name = "Rice"
+    species_name = species_name.upper()
+    original_file_path = "./data/protein_sequence/unbalanced/unbalance.fasta"
+    # 获取文件名
+    file_name = os.path.basename(original_file_path).split('.')[0]
+    species_file_path = os.path.dirname(original_file_path) + "/" + species_name + ".txt"
+
+    # 给人看的
+    line_num = 0
+    i = 0
+    with open(original_file_path) as file, open(species_file_path, "w") as new_file:
+        # 读取标识行
+        id_line = file.readline()
+        line_num += 1
+
+        while id_line:
+            print("id_line_num:%d" % line_num)
+
+            # 读取蛋白质序列行
+            # 序列被 LF 分割成了好几段
+            # 读进来会被当做 \n
+            # 这个时候需要去掉中间的 \n，然后拼接成完整的序列
+            seq_line = file.readline()
+            line_num += 1
+            merged_seq_line = None
+
+            # 标识行 >sp 开头，返回 -1 表示不是标识行
+            # 还要考虑读到最后一串的情况
+            while seq_line.find(">sp") == -1 and seq_line != "":
+                if merged_seq_line is None:
+                    merged_seq_line = seq_line.replace("\n", "")
+                else:
+                    merged_seq_line += seq_line.replace("\n", "")
+                seq_line = file.readline()
+                line_num += 1
+
+            # 难道存在连续两行都是 >sp 开头？
+            if merged_seq_line is not None:
+                # 判断该标识行是否包含指定物种单词
+                if id_line.upper().find(species_name) != -1:
+                    # 只保留长度为 40~1000 的序列
+                    if 40 <= len(merged_seq_line) and len(merged_seq_line) <= 1000:
+                        merged_seq_line += "\n"  # 最后加一个换行
+                        # 替换不合法字符（不是氨基酸）
+                        merged_seq_line = replace(merged_seq_line)
+                        # 写入新文件
+                        new_file.write(id_line) # 标识行也一起写入
+                        new_file.write(merged_seq_line)
+            # 跳出 while 循环的 seq_line 内容肯定是标识行
+            id_line = seq_line
+        print("保存到文件中...")
         file.close()
+        new_file.close()
+        print("保存成功")
 
+def remove_DNA_seq():
+    """
+    去掉 unbalanced.fasta 文件中的 DNA-binding 序列
 
-def convert_lines(lines: list) -> np.ndarray:
+    因为原始 unbalanced.fasta 文件中有 DNA-binding 序列
+    文件中的换行是 LF，读进来都会被当做 \n
+    1. 去掉 DNA-binding 序列
+    2. 去掉小于40或大于1000的序列
+    3. 替换不合法氨基酸字符为 X
+    最后只剩下：每一行一条序列
+    """
+    original_file_path = "./data/protein_sequence/unbalanced/unbalance.fasta"
+    # 获取文件名
+    file_name = os.path.basename(original_file_path).split('.')[0]
+    no_DNA_binding_file_path = os.path.dirname(original_file_path) + "/" + file_name + "_no_DNA-binding_fixed.txt"
+
+    # 给人看的
+    line_num = 0
+    i = 0
+    with open(original_file_path) as file, open(no_DNA_binding_file_path, "w") as new_file:
+        # 读取标识行
+        id_line = file.readline()
+        line_num += 1
+
+        while id_line:
+            print("id_line_num:%d" % line_num)
+            # 发现有 DNA-binding
+            if id_line.find("DNA-binding") != -1:
+                i += 1
+                print("发现第%d条DNA-binding序列，%s" % (i, id_line))
+                # 跳过后面所有的序列
+                seq_line = file.readline()
+                line_num += 1
+                while seq_line.find(">sp") == -1:
+                    seq_line = file.readline()
+                    line_num += 1
+            else:
+                # 读取蛋白质序列行
+                # 序列被 LF 分割成了好几段
+                # 读进来会被当做 \n
+                # 这个时候需要去掉中间的 \n，然后拼接成完整的序列
+                seq_line = file.readline()
+                line_num += 1
+                merged_seq_line = None
+
+                # 标识行 >sp 开头，返回 -1 表示不是标识行
+                # 还有考虑读到最后一串的情况
+                while seq_line.find(">sp") == -1 and seq_line != "":
+                    if merged_seq_line is None:
+                        merged_seq_line = seq_line.replace("\n", "")
+                    else:
+                        merged_seq_line += seq_line.replace("\n", "")
+                    seq_line = file.readline()
+                    line_num += 1
+
+                # 难道存在连续两行都是 >sp 开头？
+                if merged_seq_line is not None:
+                    # 只保留长度为 40~1000 的序列
+                    if 40 <= len(merged_seq_line) and len(merged_seq_line) <= 1000:
+                        merged_seq_line += "\n"  # 最后加一个换行
+                        # 替换不合法字符（不是氨基酸）
+                        merged_seq_line = replace(merged_seq_line)
+                        # 写入新文件
+                        new_file.write(merged_seq_line)
+            # 跳出 while 循环的 seq_line 内容肯定是标识行
+            id_line = seq_line
+        print("保存到文件中...")
+        file.close()
+        new_file.close()
+        print("保存成功")
+
+def convert_lines_to_number(lines: list):
+    """
+    将蛋白质序列列表转化为数字矩阵
+
+    :param lines:
+    :return:
+    """
+    number_matrix = None
+    for line in lines:
+        t = to_number_array(line)
+        t = t.reshape(1, t.shape[0])
+
+        if number_matrix is None:
+            number_matrix = t
+        else:
+            number_matrix = np.concatenate((number_matrix, t))
+
+    return number_matrix
+
+def convert_lines_to_onthot(lines: list) -> np.ndarray:
     """
     将数行氨基酸序列转换为 1000*20 的 one-hot 矩阵
 
@@ -196,16 +372,14 @@ def merged_data(num = None):
         # 读取文件中的数据
         pos_lines = pos_file.readlines()
         pos_label = np.ones((len(pos_lines),), dtype=np.uint8)
-
         neg_lines = neg_file.readlines()
         neg_label = np.zeros((len(neg_lines),), dtype=np.uint8)
-
-        x = pos_lines + neg_lines
-        y = np.concatenate((pos_label, neg_label))
+        x = pos_lines + neg_lines                   # 数据类型是 ['abc', 'abc']
+        y = np.concatenate((pos_label, neg_label))  # 数据类型是 ndarray
 
         # 打乱数据
         x, y = shuffle_data(x, y)
-        y = np.array(y)
+        y = np.array(y) # 数据类型是 ndarray
 
         if num is not None and num < y.shape[0]:
             return x[:num], y[:num]
@@ -230,7 +404,7 @@ def merged_batch(batch_size):
         start = i * batch_size
         end = (i + 1) * batch_size
         x_batch = x[start:end]
-        x_batch = convert_lines(x_batch)
+        x_batch = convert_lines_to_onthot(x_batch)
         y_batch = y[start:end]
         y_batch = np.array(y_batch)
         yield x_batch, y_batch
@@ -240,6 +414,7 @@ def merged_batch(batch_size):
 def shuffle_data(x, y):
     """
     打乱数据
+
     :param x:
     :param y:
     :return:
@@ -250,23 +425,24 @@ def shuffle_data(x, y):
 
     return x, y
 
-
-def get_gen(x, y, batch_size):
+def get_number_gen(x, y, batch_size):
     """
-    根据给定数据和批大小，转换为one-hot矩阵，按批产出
-    :param x: 氨基酸序列，列表
-    :param batch_size: 批大小
+    根据给定数据和批大小，转换为数字矩阵，按批产出
+
+    :param x:
+    :param y:
+    :param batch_size:
     :return:
     """
     # 计算可以生成多少个 batch
-    steps = floor(len(x) / batch_size)
+    available_steps = floor(len(x) / batch_size)
 
     # 无限循环生成 batch
     i = 0
     while True:
         start = i * batch_size
         end = (i + 1) * batch_size
-        x_train = convert_lines(x[start:end])
+        x_train = convert_lines_to_number(x[start:end])
 
         if y is None:
             yield x_train
@@ -276,180 +452,44 @@ def get_gen(x, y, batch_size):
         i += 1
 
         # 当所有数据都已经生成一遍了，再从头开始
-        if i == steps:
+        if i == available_steps:
+            i = 0
+
+def get_onehot_gen(x, y, batch_size):
+    """
+    根据给定数据和批大小，转换为 one-hot 矩阵，按批产出
+
+    :param x: 氨基酸序列，列表
+    :param batch_size: 批大小
+    :return:
+    """
+    # 计算可以生成多少个 batch
+    available_steps = floor(len(x) / batch_size)
+
+    # 无限循环生成 batch
+    i = 0
+    while True:
+        start = i * batch_size
+        end = (i + 1) * batch_size
+        x_train = convert_lines_to_onthot(x[start:end])
+
+        if y is None:
+            yield x_train
+        else:
+            yield x_train, y[start:end]
+
+        i += 1
+
+        # 当所有数据都已经生成一遍了，再从头开始
+        if i == available_steps:
             i = 0
 
 
-def data_gen(batch_size, data_num: int = 80000):
-    """
-    数据迭代器，按 batch_size 读取数据
-
-    :param batch_size: 批大小
-    :param data_num: 规定取数据集多少条，剩下的用来作验证集
-    """
-    positive_path = "./data/protein_sequence/positive.fasta"  # 正数据集
-    negative_path = "./data/protein_sequence/negative.fasta"  # 负数据集
-
-    error_str = ["", "\n"]  # 如果读取到的某一行是不合法的字符串
-    half_size = batch_size / 2  # 正负数据各取一半
-    half_num = data_num / 2  # 正负数据各取一半
-
-    #
-    # 开始读取
-    #
-    with open(positive_path) as pos_file, open(negative_path) as neg_file:
-        while True:
-            #
-            # 从头开始
-            #
-            pos_file.seek(0, 0)
-            neg_file.seek(0, 0)
-            i = 0  # 第几条蛋白质序列
-            x_train = None  # 训练数据集
-            y_train = None
-
-            #
-            # 读取标识行
-            #
-            pos_line = pos_file.readline()
-            neg_line = neg_file.readline()
-
-            while pos_line and neg_line:
-                # 读取蛋白质序列行
-                pos_line = pos_file.readline()
-                neg_line = neg_file.readline()
-
-                if (pos_line not in error_str) and (neg_line not in error_str):
-                    i += 1
-                else:
-                    #
-                    # 读取的蛋白质序列为空串
-                    # 证明到读到文件末尾了
-                    # 那就跳出 while 循环
-                    #
-                    break
-
-                #
-                # 超过指定读取的数量了
-                # 跳出循环，从头开始读
-                #
-                if i > half_num:
-                    break
-
-                #
-                # 蛋白质序列转化为 one-hot 矩阵
-                #
-                pos_onehot = to_onehot_matrix(pos_line)
-                pos_onehot = pos_onehot.reshape((1,) + pos_onehot.shape)
-
-                neg_onehot = to_onehot_matrix(neg_line)
-                neg_onehot = neg_onehot.reshape((1,) + neg_onehot.shape)
-
-                #
-                # 拼接在一起
-                #
-                if x_train is None:
-                    x_train = np.concatenate((pos_onehot, neg_onehot))
-                    y_train = np.array([1, 0], dtype=np.uint8)
-                else:
-                    x_train = np.concatenate((x_train, pos_onehot, neg_onehot))
-                    y_train = np.concatenate((y_train, np.array([1, 0], dtype=np.uint8)))
-
-                #
-                # 生成一个 batch
-                #
-                if i % half_size == 0:
-                    # print("wow，生成一个 batch")
-                    yield x_train, y_train
-                    x_train = y_train = None
-
-                #
-                # 读取标识行，判断是否还有序列可以读
-                #
-                pos_line = pos_file.readline()
-                neg_line = neg_file.readline()
 
 
-def val_data():
-    """
-    验证集
 
-    :return:验证集
-    """
 
-    positive_path = "./data/protein_sequence/positive.fasta"  # 正数据集
-    negative_path = "./data/protein_sequence/negative.fasta"  # 负数据集
-
-    error_str = ["", "\n"]  # 如果读取到的某一行是不合法的字符串
-    i = 0
-    with open(positive_path) as pos_file, open(negative_path) as neg_file:
-        x_val = None  # 训练数据集
-        y_val = None
-
-        # 读取标识行
-        pos_line = pos_file.readline()
-        neg_line = neg_file.readline()
-
-        while pos_line and neg_line:
-            # 总共有 4w2k+ 条
-            if i < 40000:
-                # 读取蛋白质序列
-                pos_file.readline()
-                pos_file.readline()
-
-                i += 1
-
-                # 读取标识行
-                neg_file.readline()
-                neg_file.readline()
-
-                continue
-
-            # 读取蛋白质序列行
-            pos_line = pos_file.readline()
-            neg_line = neg_file.readline()
-
-            if (pos_line not in error_str) and (neg_line not in error_str):
-                i += 1
-            else:
-                # 读取的蛋白质序列为空串
-                # 证明到读到文件末尾了
-                # 那就跳出 while 循环
-                break
-
-            # 蛋白质序列转化为 one-hot 矩阵
-            pos_onehot = to_onehot_matrix(pos_line)
-            pos_onehot = pos_onehot.reshape((1,) + pos_onehot.shape)
-
-            neg_onehot = to_onehot_matrix(neg_line)
-            neg_onehot = neg_onehot.reshape((1,) + neg_onehot.shape)
-
-            # 拼接在一起
-            if x_val is None:
-                x_val = np.concatenate((pos_onehot, neg_onehot))
-                y_val = np.array([1, 0], dtype=np.uint8)
-            else:
-                x_val = np.concatenate((x_val, pos_onehot, neg_onehot))
-                y_val = np.concatenate((y_val, np.array([1, 0], dtype=np.uint8)))
-
-            # 读取标识行
-            pos_line = pos_file.readline()
-            neg_line = neg_file.readline()
-
-    return x_val, y_val
 
 
 if __name__ == '__main__':
-    gen = merged_batch(32)
-    x, y = next(gen)
-    print(x)
-    print(y)
-    x, y = next(gen)
-    print(x)
-    print(y)
-
-    # pos_label = np.ones((3,), dtype=np.uint8)
-    # print(pos_label)
-    # neg_label = np.zeros((1, ), dtype=np.uint8)
-    # print(neg_label)
-    # y = pos_label + neg_label
+    pass

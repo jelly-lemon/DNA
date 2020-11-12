@@ -1,6 +1,6 @@
 import unittest
 import numpy as np
-from read_protein import to_vector, to_onehot_matrix, replace, convert_lines, merged_batch
+from read_protein import to_vector, to_onehot_matrix, replace, convert_lines_to_onthot, merged_batch, to_number_array
 
 
 class TestProtein(unittest.TestCase):
@@ -53,17 +53,27 @@ class TestProtein(unittest.TestCase):
         str = replace(str)
         self.assertEqual(str, "AXCDEF\n")
 
-    def test_convert_lines(self):
+    def test_convert_lines_to_onthot(self):
         lines = ["ABC\n", "DEF\n"]
-        one_hot = convert_lines(lines)
+        one_hot = convert_lines_to_onthot(lines)
         self.assertEqual(one_hot.shape, (2, 1000, 20))
 
-    def test_gen_merged(self):
+    def test_merged_batch(self):
         batch_size = 32
         gen = merged_batch(batch_size)
         x, y = next(gen)
         self.assertEqual(x.shape, (batch_size, 1000, 20))
         self.assertEqual(y.shape, (batch_size, ))
+
+    def test_to_number_array(self):
+        r1 = to_number_array('ACDEF') # 长度为1000
+        r2 = np.zeros((1000,))
+        r2[0] = 1
+        r2[1] = 2
+        r2[2] = 3
+        r2[3] = 4
+        r2[4] = 5
+        self.assertTrue((r1 == r2).all())
 
 if __name__ == '__main__':
     unittest.main()

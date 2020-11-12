@@ -11,6 +11,7 @@ from tensorflow.python.keras import Input, Model, callbacks, Sequential, regular
 from tensorflow.python.keras.layers import Conv1D, Flatten, Dense, \
     GlobalMaxPooling1D, Permute, concatenate, LSTM, Embedding, Dropout, Convolution1D, MaxPooling1D, Activation
 from tensorflow.python.keras import layers
+from tensorflow.python.keras import initializers
 
 
 from util import *
@@ -189,10 +190,17 @@ def tianjin_b_use_bias():
 
     return model, model_name
 
+
+def get_kernel_initializer(name):
+    if name == '':
+        return initializers.glorot_normal
+
 def tianjin_LSTM():
     """
     天津大学英文论文 LSTM 模型
     """
+    initializers_name = 'glorot_uniform'
+
     input = Input((1000,))
     x = Embedding(21, 128, input_length=1000)(input)
     x = Dropout(0.5)(x)
@@ -205,6 +213,7 @@ def tianjin_LSTM():
 
     model = Model(inputs=input, outputs=output)
     model.summary()
+    print("权重初始化方案：", initializers_name)
     model_name = "tianjin_LSTM"
 
     return model, model_name
@@ -339,11 +348,11 @@ def callback_list(save_dir, cur_k_fold=0):
     os.makedirs(save_dir, exist_ok=True)
     # 模型保存文件名
     model_save_path = save_dir + "/%d_epoch{epoch:02d}_acc{acc:.2f}.hdf5" % cur_k_fold
-    checkpoint = callbacks.ModelCheckpoint(model_save_path, monitor='acc', verbose=1, save_best_only=True, mode='max')
+    #checkpoint = callbacks.ModelCheckpoint(model_save_path, monitor='acc', verbose=1, save_best_only=True, mode='max')
     # earlystopper = callbacks.EarlyStopping(monitor='acc', patience=10, verbose=1)
     tensor_board = callbacks.TensorBoard(save_dir, histogram_freq=0, write_graph=True, write_grads=True)  # 训练日志
 
-    return [checkpoint, tensor_board]
+    return [tensor_board]
 
 
 

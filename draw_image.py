@@ -11,6 +11,16 @@ import seaborn as sns
 amino_acid = ['A', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'K', 'L',
                'M', 'N', 'P', 'Q', 'R', 'S', 'T', 'V', 'W', 'Y']
 
+def show_every_fold_acc(train_acc, val_acc, save_path):
+    plt.figure()
+    plt.plot(range(1, len(train_acc) + 1), train_acc, 'bo-', label='train_acc')
+    plt.plot(range(1, len(val_acc) + 1), val_acc, 'r+-', label='val_acc')
+    plt.xlabel("kFold")
+    plt.ylabel("acc")
+    plt.legend(loc='best')
+    #plt.title("train_acc VS val_acc")
+    plt.savefig(save_path)
+
 def show_train_val(train_acc, val_acc, save_path):
     """
     训练集和验证集 acc 折线图

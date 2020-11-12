@@ -62,3 +62,32 @@ def close_log():
     关闭日志文件，恢复标准输入输出流
     """
     sys.stdout.recover()
+
+def time_spent(all_seconds):
+    """
+    把花费的秒数换算成几天几小时几秒的格式
+
+    :param all_seconds: 总秒数
+    :return:
+    """
+    time_str = ""   # 输出的花费时间字符串
+    days = hours = minutes = seconds = 0
+
+    # 判断一定要加一个 int，不然会有小数，永远不可能为 0
+    if int(all_seconds/(24*60*60)) > 0:
+        days = int(all_seconds/(24*60*60))
+        all_seconds -= days*(24*60*60)
+        time_str += "%2dd " % days
+    if int(all_seconds/(60*60)) > 0:
+        hours = int(all_seconds/(60*60))
+        all_seconds -= hours*(60*60)
+        time_str += "%2dh " % hours
+    if int(all_seconds/60) > 0:
+        minutes = int(all_seconds/60)
+        all_seconds -= minutes*60
+        time_str += "%2dm " % minutes
+    seconds = all_seconds
+    time_str += "%2ds" % seconds
+
+    return time_str
+
