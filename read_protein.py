@@ -5,6 +5,7 @@ import os
 
 import numpy as np
 import random
+import _pickle as cPickle
 
 from math import floor
 
@@ -15,6 +16,11 @@ convert_dict = {'A': 1, 'C': 2, 'D': 3, 'E': 4, 'F': 5, 'G': 6, 'H': 7, 'I': 8, 
 illegal_char = {'B', 'J', 'O', 'U', 'X', 'Z'}
 
 def to_number_array(original_str: str):
+    """
+    将蛋白质序列转为数字数组
+    :param original_str:
+    :return:
+    """
     #
     # 检查
     #
@@ -164,22 +170,27 @@ def fix_data(file_path: str):
     去掉原始文件中的标识行和不合法字符
 
     可以对所有 fasta 文件调用该函数
+    :param file_path:
     """
     file_name = os.path.basename(file_path).split('.')[0]
-    new_file_path = os.path.abspath(os.path.dirname(file_path)) + "/" + file_name + "_fixed.txt"
+    new_file_path = os.path.abspath(os.path.dirname(file_path)) + "/" + file_name + "_fixed_equal-length.txt"
 
     with open(file_path) as file, open(new_file_path, "w") as new_file:
         # 读取标识行
-        line = file.readline()
-        while line:
+        id_line = file.readline()
+        while id_line:
             # 读取蛋白质序列行（\r 直接忽略，不会认为有换行）
-            line = file.readline()
+            seq_line = file.readline()
             # 替换不合法字符（不是氨基酸）
-            line = replace(line)
+            seq_line = replace(seq_line)
+            # 长度不够，末尾补 X
+            seq_line = seq_line.replace("\n", "")
+            if len(seq_line) < 1000:
+                seq_line += (1000-len(seq_line))*'X' + '\n'
             # 写入新文件
-            new_file.write(line)
+            new_file.write(seq_line)
             # 读取标识行
-            line = file.readline()
+            id_line = file.readline()
         file.close()
         new_file.close()
 
@@ -357,30 +368,53 @@ def convert_lines_to_onthot(lines: list) -> np.ndarray:
 
     return one_hot_batch
 
+def merged_data_arr():
+    """
+    合并数据集，成为一个数组
+    """
+    positive_path = "./data/protein_sequence/equal/positive_fixed_number-arr.pkl"  # 正数据集
+    negative_path = "./data/protein_sequence/equal/negative_fixed_number-arr.pkl"  # 负数据集
 
-def merged_data(num = None):
+    with open(positive_path, "rb") as pos_file, open(negative_path, "rb") as neg_file:
+        pos_arr = cPickle.load(pos_file)
+        y_pos = np.ones(pos_arr.shape[0], dtype=np.uint8)
+        neg_arr = cPickle.load(neg_file)
+        y_neg = np.zeros(neg_arr.shape[0], dtype=np.uint8)
+        x = np.concatenate((pos_arr, neg_arr))
+        y = np.concatenate((y_pos, y_neg))
+
+        return x, y
+
+
+def merged_data(positive_path = None, negative_path = None, num = None):
     """
     合并正负数据集，并且打乱，返回所有数据
 
     @:param num 指定返回数据的数量
     :return:
     """
-    positive_path = "./data/protein_sequence/equal/positive_fixed.txt"  # 正数据集
-    negative_path = "./data/protein_sequence/equal/negative_fixed.txt"  # 负数据集
+    if positive_path is None:
+        positive_path = "./data/protein_sequence/equal/positive_fixed.txt"  # 正数据集
+    if negative_path is None:
+        negative_path = "./data/protein_sequence/equal/negative_fixed.txt"  # 负数据集
 
     with open(positive_path) as pos_file, open(negative_path) as neg_file:
+        #
         # 读取文件中的数据
-        pos_lines = pos_file.readlines()
+        #
+        pos_lines = pos_file.readlines()    # 读取全部的行
         pos_label = np.ones((len(pos_lines),), dtype=np.uint8)
         neg_lines = neg_file.readlines()
         neg_label = np.zeros((len(neg_lines),), dtype=np.uint8)
         x = pos_lines + neg_lines                   # 数据类型是 ['abc', 'abc']
         y = np.concatenate((pos_label, neg_label))  # 数据类型是 ndarray
 
+        #
         # 打乱数据
+        #
         x, y = shuffle_data(x, y)
         y = np.array(y) # 数据类型是 ndarray
-
+        # 有可能实际数据没指定数据量那么多
         if num is not None and num < y.shape[0]:
             return x[:num], y[:num]
 
@@ -455,7 +489,7 @@ def get_number_gen(x, y, batch_size):
         if i == available_steps:
             i = 0
 
-def get_onehot_gen(x, y, batch_size):
+def get_onehot_gen(x, y, batch_size, available_steps=None):
     """
     根据给定数据和批大小，转换为 one-hot 矩阵，按批产出
 
@@ -464,7 +498,8 @@ def get_onehot_gen(x, y, batch_size):
     :return:
     """
     # 计算可以生成多少个 batch
-    available_steps = floor(len(x) / batch_size)
+    if available_steps is None:
+        available_steps = int(len(x) / batch_size)
 
     # 无限循环生成 batch
     i = 0
@@ -484,12 +519,74 @@ def get_onehot_gen(x, y, batch_size):
         if i == available_steps:
             i = 0
 
+def save_as_onehot(file_path):
+    """
+    读取序列文件，保存为 onehot 编码的矩阵 (?,1000,20)
 
+    :param file_path:
+    :return:
+    """
+    file_name = os.path.basename(file_path).split('.')[0]
+    new_file_path = os.path.abspath(os.path.dirname(file_path)) + "/" + file_name + "_onehot.pkl"
 
+    line_num = 0
+    with open(file_path) as file, open(new_file_path, "wb") as new_file:
+        seq_arr = []
+        seq_line = file.readline()
+        line_num += 1
+        while seq_line:
+            print("line_num:", line_num)
+            seq_line = to_onehot_matrix(seq_line)
+            seq_arr.append(seq_line)
+            # 读取标识行
+            seq_line = file.readline()
+            line_num += 1
+
+        # 直接保存为 ndarray
+        seq_arr = np.array(seq_arr, dtype=np.uint8)
+        cPickle.dump(seq_arr, new_file)
+        file.close()
+        new_file.close()
+
+def save_as_number(file_path):
+    """
+    读取纯序列文件，将序列保存为数组
+
+    :param file_path:
+    :return:
+    """
+    file_name = os.path.basename(file_path).split('.')[0]
+    new_file_path = os.path.abspath(os.path.dirname(file_path)) + "/" + file_name + "_number-arr.pkl"
+
+    line_num = 0
+    with open(file_path) as file, open(new_file_path, "wb") as new_file:
+        seq_arr = []
+        seq_line = file.readline()
+        line_num += 1
+        while seq_line:
+            print("line_num:", line_num)
+            seq_line = to_number_array(seq_line)
+            seq_arr.append(seq_line)
+            # 返回的数组转为 str 时，中间会有很多 \n
+            # seq_line = seq_line.replace("\n", "")
+            # seq_line = seq_line[1:-1]   # 去掉数组前面的 [ 和后面的 ]
+            # 写入新文件
+            #new_file.write(seq_line)
+            # 读取标识行
+            seq_line = file.readline()
+            line_num += 1
+
+        # 直接保存为 ndarray
+        seq_arr = np.array(seq_arr, dtype=np.uint8)
+        cPickle.dump(seq_arr, new_file)
+        file.close()
+        new_file.close()
 
 
 
 
 
 if __name__ == '__main__':
+    # save_as_number("./data/protein_sequence/equal/negative_fixed.txt")
+    save_as_onehot("./data/protein_sequence/equal/positive_fixed.txt")
     pass

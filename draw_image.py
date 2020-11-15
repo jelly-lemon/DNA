@@ -12,6 +12,14 @@ amino_acid = ['A', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'K', 'L',
                'M', 'N', 'P', 'Q', 'R', 'S', 'T', 'V', 'W', 'Y']
 
 def show_every_fold_acc(train_acc, val_acc, save_path):
+    """
+    画交叉验证结果
+
+    :param train_acc:
+    :param val_acc:
+    :param save_path:
+    :return:
+    """
     plt.figure()
     plt.plot(range(1, len(train_acc) + 1), train_acc, 'bo-', label='train_acc')
     plt.plot(range(1, len(val_acc) + 1), val_acc, 'r+-', label='val_acc')
@@ -20,6 +28,7 @@ def show_every_fold_acc(train_acc, val_acc, save_path):
     plt.legend(loc='best')
     #plt.title("train_acc VS val_acc")
     plt.savefig(save_path)
+    plt.close()
 
 def show_train_val(train_acc, val_acc, save_path):
     """

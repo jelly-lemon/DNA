@@ -32,7 +32,7 @@ def G_mean(y_true, y_pred):
 def Precision(y_true, y_pred):
     """
     精确率
-    :param y_true:
+    :param y_true: 都是张量
     :param y_pred:
     :return:
     """

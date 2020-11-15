@@ -17,12 +17,12 @@ from tensorflow.python.keras import initializers
 from util import *
 
 
-def CNN_16kernal() -> Model:
+def CNN_16kernal():
     """
     一个基本的 CNN 网络，用来对一维数据进行二分类
+
     :return: 创建好的模型
     """
-    print("model: cnn_16kernal")
 
     # input = Input((101, 4))
     input = Input((1000, 20))
@@ -34,8 +34,9 @@ def CNN_16kernal() -> Model:
 
     model = Model(inputs=input, outputs=output)
     model.summary()
+    model_name = "cnn_16kernal"
 
-    return model
+    return model, model_name
 
 
 def CNN_32kernal() -> Model:
@@ -104,14 +105,12 @@ def tianjin_a_original() -> Model:
 
     return model
 
-def tianjin_a_use_activation() -> Model:
+def tianjin_a_use_activation():
     """
     天津大学 cnn，添加了激活函数
     a 分类方式
     :return:创建好的模型
     """
-    print("model: tianjin_a_use_activation")
-
     #
     # 序列处理模块
     #
@@ -127,9 +126,16 @@ def tianjin_a_use_activation() -> Model:
     output = Dense(1, activation='sigmoid', use_bias=True)(x)  # 标签没有 one-hot 化，故输出节点仅 1 个
 
     model = Model(inputs=input, outputs=output)
+
+    #
+    # 打印相关信息
+    #
+    model_name = "tianjin_a_use_activation"
+    print("model name:", model_name)
     model.summary()
 
-    return model
+
+    return model, model_name
 
 
 def tianjin_b_original():
