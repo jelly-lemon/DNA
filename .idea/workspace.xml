@@ -1,14 +1,42 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="eaf8e41a-0d57-4781-b4c8-c9bb391ce5eb" name="Default Changelist" comment="">
+    <list default="true" id="eaf8e41a-0d57-4781-b4c8-c9bb391ce5eb" name="Default Changelist" comment="导出依赖">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CNN.py" beforeDir="false" afterPath="$PROJECT_DIR$/CNN.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/custom_metrics.py" beforeDir="false" afterPath="$PROJECT_DIR$/custom_metrics.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/draw_image.py" beforeDir="false" afterPath="$PROJECT_DIR$/draw_image.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/read_protein.py" beforeDir="false" afterPath="$PROJECT_DIR$/read_protein.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/test.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/train.py" beforeDir="false" afterPath="$PROJECT_DIR$/train.py" afterDir="false" />
+    </list>
+    <list id="748be42e-cfc1-44cc-8c48-0ddaedc099a9" name="导出依赖" comment="">
+      <change afterPath="$PROJECT_DIR$/data/DNA_binding/test.data.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/DNA_binding/train.data.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/DNA_binding/x_train.npy" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/DNA_binding/y_train.npy" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/protein_sequence/equal/negative.fasta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/protein_sequence/equal/negative_fixed.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/protein_sequence/equal/negative_fixed_equal-length_number.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/protein_sequence/equal/negative_fixed_number-arr.pkl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/protein_sequence/equal/positive.fasta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/protein_sequence/equal/positive_fixed.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/protein_sequence/equal/positive_fixed_equal-length_number.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/protein_sequence/equal/positive_fixed_number-arr.pkl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/protein_sequence/equal/positive_fixed_onehot.pkl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/protein_sequence/unbalanced/HUMAN.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/protein_sequence/unbalanced/MOUSE.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/protein_sequence/unbalanced/RICE.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/protein_sequence/unbalanced/unbalance.fasta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/protein_sequence/unbalanced/unbalance_no_DNA-binding_fixed.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/protein_sequence/天大英论引用25的数据/gkv805_Supplementary_Data.zip" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/protein_sequence/天大英论引用25的数据/yeast 数据/nar-01019-met-n-2015-File007.docx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/protein_sequence/天大英论引用25的数据/yeast 数据/nar-01019-met-n-2015-File008.fasta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/protein_sequence/天大英论引用25的数据/yeast 数据/nar-01019-met-n-2015-File009.pl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/protein_sequence/天大英论引用25的数据/yeast 数据/nar-01019-met-n-2015-File010.zip" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/protein_sequence/天大英论引用25的数据/yeast 数据/nar-01019-met-n-2015-File011.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/protein_sequence/天大英论引用25的数据/yeast 数据/nar-01019-met-n-2015-File012.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/protein_sequence/天大英论引用25的数据/yeast 数据/nar-01019-met-n-2015-File013.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/protein_sequence/我从uniprot下载的原始的数据/uniprot_sprot.fasta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/天津英文论文原代码/188.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/天津英文论文原代码/AC.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/天津英文论文原代码/CT.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/天津英文论文原代码/Two_layers_CNNLSTM.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/requirement.txt" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -32,59 +60,14 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/train.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="171">
-              <caret line="75" column="5" selection-start-line="75" selection-start-column="5" selection-end-line="75" selection-end-column="5" />
-              <folding>
-                <element signature="e#0#15#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/read_protein.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="241">
-              <caret line="590" column="69" selection-start-line="590" selection-start-column="19" selection-end-line="590" selection-end-column="69" />
+            <state relative-caret-position="354">
+              <caret line="582" column="24" lean-forward="true" selection-start-line="582" selection-start-column="24" selection-end-line="582" selection-end-column="24" />
               <folding>
                 <element signature="e#16#25#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/test.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="380">
-              <caret line="20" column="72" lean-forward="true" selection-start-line="20" selection-start-column="72" selection-end-line="20" selection-end-column="72" />
-              <folding>
-                <element signature="e#0#15#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/draw_image.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-893">
-              <caret line="16" selection-start-line="16" selection-end-line="16" />
-              <folding>
-                <element signature="e#15#50#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://C:/anaconda/envs/py36_tf/Lib/site-packages/matplotlib/pyplot.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="403">
-              <caret line="813" column="13" selection-start-line="813" selection-start-column="13" selection-end-line="813" selection-end-column="13" />
             </state>
           </provider>
         </entry>
@@ -200,19 +183,6 @@
               <item name="DNA" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
               <item name="D:\0-1-PyCharm\DNA" type="442cc68d:ScopeViewTreeModel$RootNode" />
               <item name="data" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-            </path>
-            <path>
-              <item name="DNA" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
-              <item name="D:\0-1-PyCharm\DNA" type="442cc68d:ScopeViewTreeModel$RootNode" />
-              <item name="data" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="protein_sequence" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-            </path>
-            <path>
-              <item name="DNA" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
-              <item name="D:\0-1-PyCharm\DNA" type="442cc68d:ScopeViewTreeModel$RootNode" />
-              <item name="data" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="protein_sequence" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="equal" type="9f88c78c:ScopeViewTreeModel$FileNode" />
             </path>
           </expand>
           <select />
@@ -368,6 +338,7 @@
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
       <changelist id="eaf8e41a-0d57-4781-b4c8-c9bb391ce5eb" name="Default Changelist" comment="" />
+      <changelist id="748be42e-cfc1-44cc-8c48-0ddaedc099a9" name="导出依赖" comment="" />
       <created>1602052590539</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
@@ -398,6 +369,7 @@
       <workItem from="1605149430892" duration="11582000" />
       <workItem from="1605228023400" duration="10615000" />
       <workItem from="1605355346941" duration="8392000" />
+      <workItem from="1605408657092" duration="2501000" />
     </task>
     <task id="LOCAL-00001" summary="实现了 LSTM">
       <created>1605143744672</created>
@@ -406,7 +378,21 @@
       <option name="project" value="LOCAL" />
       <updated>1605143744672</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="实现了 LSTM">
+      <created>1605408975330</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1605408975330</updated>
+    </task>
+    <task id="LOCAL-00003" summary="导出依赖">
+      <created>1605416906728</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1605416906728</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -442,13 +428,14 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="340984000" />
+    <option name="totallyTimeSpent" value="343485000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.5807365" visible="true" weight="0.3632708" />
-      <window_info id="Structure" order="1" sideWeight="0.41926345" side_tool="true" visible="true" weight="0.3632708" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.57932013" visible="true" weight="0.36796248" />
+      <window_info id="Structure" order="1" sideWeight="0.4206799" side_tool="true" visible="true" weight="0.36796248" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3286119" />
@@ -458,7 +445,7 @@
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="8" weight="0.3286119" />
+      <window_info anchor="bottom" id="Version Control" order="8" weight="0.6827195" />
       <window_info anchor="bottom" id="Database Changes" order="9" />
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.5033512" side_tool="true" weight="0.3753541" />
       <window_info anchor="bottom" id="Terminal" order="11" weight="0.53541076" />
@@ -515,7 +502,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="实现了 LSTM" />
-    <option name="LAST_COMMIT_MESSAGE" value="实现了 LSTM" />
+    <MESSAGE value="导出依赖" />
+    <option name="LAST_COMMIT_MESSAGE" value="导出依赖" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/DNA$Unittests_for_read_protein_test_TestProtein_test_to_onehot.coverage" NAME="Unittests for read_protein_test.TestProtein.test_to_onehot Coverage Results" MODIFIED="1604022898220" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
@@ -547,21 +535,6 @@
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/logs/MLP_protein_data-4000_acc-0.80/2_roc.jpg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/logs/MLP_protein_data-4000_acc-0.80/3_roc.jpg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/logs/MLP_protein_data-4000_acc-0.80/4_roc.jpg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/logs/MLP_protein_data-4000_acc-0.80/5_roc.jpg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/logs/tianjin_a_use_activation_data-4000_acc-0.79/1_roc.jpg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/logs/tianjin_a_use_activation_data-4000_acc-0.79/2_roc.jpg">
       <provider selected="true" editor-type-id="images" />
     </entry>
@@ -712,12 +685,12 @@
       <provider selected="true" editor-type-id="LargeFileEditor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/data/protein_sequence/equal/positive_fixed_equal-length_number.txt">
+      <provider selected="true" editor-type-id="LargeFileEditor" />
       <provider editor-type-id="text-editor">
         <state>
           <caret selection-end-column="98" />
         </state>
       </provider>
-      <provider selected="true" editor-type-id="LargeFileEditor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/CNN.py">
       <provider selected="true" editor-type-id="text-editor">
@@ -743,26 +716,9 @@
     <entry file="file://$PROJECT_DIR$/data/protein_sequence/equal/negative_fixed.txt">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://C:/anaconda/envs/py36_tf/Lib/site-packages/matplotlib/pyplot.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="403">
-          <caret line="813" column="13" selection-start-line="813" selection-start-column="13" selection-end-line="813" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/draw_image.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-893">
-          <caret line="16" selection-start-line="16" selection-end-line="16" />
-          <folding>
-            <element signature="e#15#50#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/train.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="171">
+        <state>
           <caret line="75" column="5" selection-start-line="75" selection-start-column="5" selection-end-line="75" selection-end-column="5" />
           <folding>
             <element signature="e#0#15#0" expanded="true" />
@@ -770,22 +726,55 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/read_protein.py">
+    <entry file="file://$PROJECT_DIR$/draw_image.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="241">
-          <caret line="590" column="69" selection-start-line="590" selection-start-column="19" selection-end-line="590" selection-end-column="69" />
+        <state relative-caret-position="247">
+          <caret line="16" selection-start-line="16" selection-end-line="16" />
           <folding>
-            <element signature="e#16#25#0" expanded="true" />
+            <element signature="e#15#50#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://C:/anaconda/envs/py36_tf/Lib/site-packages/matplotlib/pyplot.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15314">
+          <caret line="813" column="13" selection-start-line="813" selection-start-column="13" selection-end-line="813" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/requirement.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="164">
+          <caret line="93" column="16" selection-start-line="93" selection-start-column="16" selection-end-line="93" selection-end-column="16" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/test.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="380">
-          <caret line="20" column="72" lean-forward="true" selection-start-line="20" selection-start-column="72" selection-end-line="20" selection-end-column="72" />
+        <state relative-caret-position="114">
+          <caret line="6" column="21" lean-forward="true" selection-start-line="6" selection-start-column="21" selection-end-line="6" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/DNA_binding/test.data.txt">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/DNA_binding/train.data.txt">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/DNA_binding/y_train.npy">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/DNA_binding/x_train.npy">
+      <provider selected="true" editor-type-id="LargeFileEditor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/read_protein.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="354">
+          <caret line="582" column="24" lean-forward="true" selection-start-line="582" selection-start-column="24" selection-end-line="582" selection-end-column="24" />
           <folding>
-            <element signature="e#0#15#0" expanded="true" />
+            <element signature="e#16#25#0" expanded="true" />
           </folding>
         </state>
       </provider>
