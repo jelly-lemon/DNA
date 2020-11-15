@@ -1,42 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="eaf8e41a-0d57-4781-b4c8-c9bb391ce5eb" name="Default Changelist" comment="导出依赖">
+    <list default="true" id="eaf8e41a-0d57-4781-b4c8-c9bb391ce5eb" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/DNA.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/DNA.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
-    <list id="748be42e-cfc1-44cc-8c48-0ddaedc099a9" name="导出依赖" comment="">
-      <change afterPath="$PROJECT_DIR$/data/DNA_binding/test.data.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/DNA_binding/train.data.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/DNA_binding/x_train.npy" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/DNA_binding/y_train.npy" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/protein_sequence/equal/negative.fasta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/protein_sequence/equal/negative_fixed.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/protein_sequence/equal/negative_fixed_equal-length_number.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/protein_sequence/equal/negative_fixed_number-arr.pkl" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/protein_sequence/equal/positive.fasta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/protein_sequence/equal/positive_fixed.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/protein_sequence/equal/positive_fixed_equal-length_number.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/protein_sequence/equal/positive_fixed_number-arr.pkl" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/protein_sequence/equal/positive_fixed_onehot.pkl" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/protein_sequence/unbalanced/HUMAN.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/protein_sequence/unbalanced/MOUSE.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/protein_sequence/unbalanced/RICE.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/protein_sequence/unbalanced/unbalance.fasta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/protein_sequence/unbalanced/unbalance_no_DNA-binding_fixed.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/protein_sequence/天大英论引用25的数据/gkv805_Supplementary_Data.zip" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/protein_sequence/天大英论引用25的数据/yeast 数据/nar-01019-met-n-2015-File007.docx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/protein_sequence/天大英论引用25的数据/yeast 数据/nar-01019-met-n-2015-File008.fasta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/protein_sequence/天大英论引用25的数据/yeast 数据/nar-01019-met-n-2015-File009.pl" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/protein_sequence/天大英论引用25的数据/yeast 数据/nar-01019-met-n-2015-File010.zip" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/protein_sequence/天大英论引用25的数据/yeast 数据/nar-01019-met-n-2015-File011.pdf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/protein_sequence/天大英论引用25的数据/yeast 数据/nar-01019-met-n-2015-File012.xlsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/protein_sequence/天大英论引用25的数据/yeast 数据/nar-01019-met-n-2015-File013.pdf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/protein_sequence/我从uniprot下载的原始的数据/uniprot_sprot.fasta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/天津英文论文原代码/188.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/天津英文论文原代码/AC.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/天津英文论文原代码/CT.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/天津英文论文原代码/Two_layers_CNNLSTM.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/requirement.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/requirement.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirement.txt" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -57,22 +26,6 @@
     </option>
     <expand />
     <select />
-  </component>
-  <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/read_protein.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="354">
-              <caret line="582" column="24" lean-forward="true" selection-start-line="582" selection-start-column="24" selection-end-line="582" selection-end-column="24" />
-              <folding>
-                <element signature="e#16#25#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -117,85 +70,17 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="ROOT_SYNC" value="DONT_SYNC" />
   </component>
-  <component name="IdeDocumentHistory">
-    <option name="CHANGED_PATHS">
-      <list>
-        <option value="$PROJECT_DIR$/data/negative.fasta" />
-        <option value="$PROJECT_DIR$/data/test" />
-        <option value="$PROJECT_DIR$/read_txt.py" />
-        <option value="$PROJECT_DIR$/README.MD" />
-        <option value="$PROJECT_DIR$/load_weight.py" />
-        <option value="$PROJECT_DIR$/heatmap.py" />
-        <option value="$PROJECT_DIR$/read_DNA.py" />
-        <option value="$PROJECT_DIR$/test.txt" />
-        <option value="$PROJECT_DIR$/Logger.py" />
-        <option value="$PROJECT_DIR$/util_test.py" />
-        <option value="$PROJECT_DIR$/util.py" />
-        <option value="$PROJECT_DIR$/read_protein_test.py" />
-        <option value="$PROJECT_DIR$/custom_metrics.py" />
-        <option value="$PROJECT_DIR$/CNN.py" />
-        <option value="$PROJECT_DIR$/train.py" />
-        <option value="$PROJECT_DIR$/draw_image.py" />
-        <option value="$PROJECT_DIR$/read_protein.py" />
-        <option value="$PROJECT_DIR$/test.py" />
-      </list>
-    </option>
-  </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="240" />
-    <option name="y" value="125" />
-    <option name="width" value="1440" />
-    <option name="height" value="775" />
-  </component>
+  <component name="ProjectId" id="1kJR8z9617VSCm8kiVNs0yKZgPc" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
-  <component name="ProjectView">
-    <navigator currentView="Scope" currentSubView="Scope 'Project Files'; set:Project Files; class com.intellij.psi.search.scope.ProjectFilesScope" proportions="" version="1">
-      <showMembers Scope="false" />
-      <sortByType Scope="false" />
-      <foldersAlwaysOnTop value="true" />
-    </navigator>
-    <panes>
-      <pane id="ProjectPane">
-        <subPane>
-          <expand>
-            <path>
-              <item name="DNA" type="b2602c69:ProjectViewProjectNode" />
-              <item name="DNA" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="DNA" type="b2602c69:ProjectViewProjectNode" />
-              <item name="DNA" type="462c0819:PsiDirectoryNode" />
-              <item name="data" type="462c0819:PsiDirectoryNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
-      <pane id="Scope">
-        <subPane subId="Scope 'Project Files'; set:Project Files; class com.intellij.psi.search.scope.ProjectFilesScope">
-          <expand>
-            <path>
-              <item name="DNA" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
-              <item name="D:\0-1-PyCharm\DNA" type="442cc68d:ScopeViewTreeModel$RootNode" />
-            </path>
-            <path>
-              <item name="DNA" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
-              <item name="D:\0-1-PyCharm\DNA" type="442cc68d:ScopeViewTreeModel$RootNode" />
-              <item name="data" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
-    </panes>
-  </component>
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/data/protein_sequence/引用25的数据" />
+    <property name="last_opened_file_path" value="C:/Program Files/Git/bin/git.exe" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="settings.editor.selected.configurable" value="settings.github" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -338,7 +223,6 @@
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
       <changelist id="eaf8e41a-0d57-4781-b4c8-c9bb391ce5eb" name="Default Changelist" comment="" />
-      <changelist id="748be42e-cfc1-44cc-8c48-0ddaedc099a9" name="导出依赖" comment="" />
       <created>1602052590539</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
@@ -369,7 +253,11 @@
       <workItem from="1605149430892" duration="11582000" />
       <workItem from="1605228023400" duration="10615000" />
       <workItem from="1605355346941" duration="8392000" />
-      <workItem from="1605408657092" duration="2501000" />
+      <workItem from="1605416556534" duration="1906000" />
+      <workItem from="1605420318217" duration="699000" />
+      <workItem from="1605421038930" duration="1403000" />
+      <workItem from="1605423151402" duration="2289000" />
+      <workItem from="1605425715206" duration="357000" />
     </task>
     <task id="LOCAL-00001" summary="实现了 LSTM">
       <created>1605143744672</created>
@@ -378,84 +266,8 @@
       <option name="project" value="LOCAL" />
       <updated>1605143744672</updated>
     </task>
-    <task id="LOCAL-00002" summary="实现了 LSTM">
-      <created>1605408975330</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1605408975330</updated>
-    </task>
-    <task id="LOCAL-00003" summary="导出依赖">
-      <created>1605416906728</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1605416906728</updated>
-    </task>
-    <option name="localTasksCounter" value="4" />
+    <option name="localTasksCounter" value="2" />
     <servers />
-  </component>
-  <component name="TestHistory">
-    <history-entry file="Unittests_for_read_protein_test_TestProtein_test_to_onehot_matrix - 2020.11.06 at 10h 47m 31s.xml">
-      <configuration name="Unittests for read_protein_test.TestProtein.test_to_onehot_matrix" configurationId="tests" />
-    </history-entry>
-    <history-entry file="Unittests_for_util_test_TestUtil_test_time_spent - 2020.11.11 at 09h 48m 29s.xml">
-      <configuration name="Unittests for util_test.TestUtil.test_time_spent" configurationId="tests" />
-    </history-entry>
-    <history-entry file="Unittests_in_util_test_py - 2020.11.11 at 09h 49m 48s.xml">
-      <configuration name="Unittests in util_test.py" configurationId="tests" />
-    </history-entry>
-    <history-entry file="Unittests_for_util_test_TestUtil_test_time_spent - 2020.11.11 at 09h 50m 36s.xml">
-      <configuration name="Unittests for util_test.TestUtil.test_time_spent" configurationId="tests" />
-    </history-entry>
-    <history-entry file="Unittests_for_read_protein_test_TestProtein_test_to_number - 2020.11.11 at 22h 24m 44s.xml">
-      <configuration name="Unittests for read_protein_test.TestProtein.test_to_number" configurationId="tests" />
-    </history-entry>
-    <history-entry file="Unittests_for_read_protein_test_TestProtein_test_to_number - 2020.11.11 at 22h 24m 54s.xml">
-      <configuration name="Unittests for read_protein_test.TestProtein.test_to_number" configurationId="tests" />
-    </history-entry>
-    <history-entry file="Unittests_for_read_protein_test_TestProtein_test_to_number - 2020.11.11 at 22h 25m 31s.xml">
-      <configuration name="Unittests for read_protein_test.TestProtein.test_to_number" configurationId="tests" />
-    </history-entry>
-    <history-entry file="Unittests_for_read_protein_test_TestProtein_test_to_number - 2020.11.11 at 22h 26m 42s.xml">
-      <configuration name="Unittests for read_protein_test.TestProtein.test_to_number" configurationId="tests" />
-    </history-entry>
-    <history-entry file="Unittests_in_read_protein_test_py - 2020.11.11 at 22h 27m 10s.xml">
-      <configuration name="Unittests in read_protein_test.py" configurationId="tests" />
-    </history-entry>
-    <history-entry file="Unittests_for_read_protein_test_TestProtein_test_to_number - 2020.11.11 at 22h 29m 52s.xml">
-      <configuration name="Unittests for read_protein_test.TestProtein.test_to_number" configurationId="tests" />
-    </history-entry>
-  </component>
-  <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="343485000" />
-  </component>
-  <component name="ToolWindowManager">
-    <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
-    <editor active="true" />
-    <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.57932013" visible="true" weight="0.36796248" />
-      <window_info id="Structure" order="1" sideWeight="0.4206799" side_tool="true" visible="true" weight="0.36796248" />
-      <window_info id="Favorites" order="2" side_tool="true" />
-      <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.3286119" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.4966488" weight="0.3753541" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.40509915" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="8" weight="0.6827195" />
-      <window_info anchor="bottom" id="Database Changes" order="9" />
-      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.5033512" side_tool="true" weight="0.3753541" />
-      <window_info anchor="bottom" id="Terminal" order="11" weight="0.53541076" />
-      <window_info anchor="bottom" id="Python Console" order="12" weight="0.32956153" />
-      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" id="SciView" order="3" weight="0.23190348" />
-      <window_info anchor="right" id="Database" order="4" weight="0.3297587" />
-    </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
@@ -466,20 +278,7 @@
         <entry key="MAIN">
           <value>
             <State>
-              <option name="RECENTLY_FILTERED_USER_GROUPS">
-                <collection />
-              </option>
-              <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
-                <collection />
-              </option>
-              <option name="COLUMN_ORDER">
-                <list>
-                  <option value="0" />
-                  <option value="1" />
-                  <option value="2" />
-                  <option value="3" />
-                </list>
-              </option>
+              <option name="COLUMN_ORDER" />
             </State>
           </value>
         </entry>
@@ -502,28 +301,27 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="实现了 LSTM" />
-    <MESSAGE value="导出依赖" />
-    <option name="LAST_COMMIT_MESSAGE" value="导出依赖" />
+    <option name="LAST_COMMIT_MESSAGE" value="实现了 LSTM" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/DNA$Unittests_for_read_protein_test_TestProtein_test_to_onehot.coverage" NAME="Unittests for read_protein_test.TestProtein.test_to_onehot Coverage Results" MODIFIED="1604022898220" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/DNA$Unittests_for_read_protein_test_TestProtein_test_replace.coverage" NAME="Unittests for read_protein_test.TestProtein.test_replace Coverage Results" MODIFIED="1604365846398" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/DNA$test.coverage" NAME="test Coverage Results" MODIFIED="1605231578062" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/DNA$read_txt.coverage" NAME="read_txt Coverage Results" MODIFIED="1602056338035" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/DNA$Unittests_for_read_protein_test_TestProtein.coverage" NAME="Unittests for read_protein_test.TestProtein Coverage Results" MODIFIED="1604371454593" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/DNA$Unittests_in_read_protein_test_py.coverage" NAME="Unittests in read_protein_test.py Coverage Results" MODIFIED="1605104829006" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/DNA$Unittests_for_read_protein_test_TestProtein_test_to_number.coverage" NAME="Unittests for read_protein_test.TestProtein.test_to_number Coverage Results" MODIFIED="1605104991696" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/DNA$heatmap.coverage" NAME="heatmap Coverage Results" MODIFIED="1604129624513" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/DNA$Logger.coverage" NAME="Logger Coverage Results" MODIFIED="1604486320053" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/DNA$read_protein.coverage" NAME="read_protein Coverage Results" MODIFIED="1605403936135" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/DNA$CNN.coverage" NAME="CNN Coverage Results" MODIFIED="1605102486251" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/DNA$Unittests_in_util_test_py.coverage" NAME="Unittests in util_test.py Coverage Results" MODIFIED="1605059349549" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/DNA$draw_image.coverage" NAME="draw_image Coverage Results" MODIFIED="1604627717130" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/DNA$train.coverage" NAME="train Coverage Results" MODIFIED="1605359311737" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/DNA$Unittests_for_util_test_TestUtil_test_time_spent.coverage" NAME="Unittests for util_test.TestUtil.test_time_spent Coverage Results" MODIFIED="1605059435763" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/DNA$Unittests_for_read_protein_test_TestProtein_test_to_onehot_matrix.coverage" NAME="Unittests for read_protein_test.TestProtein.test_to_onehot_matrix Coverage Results" MODIFIED="1604630851414" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/DNA$Unittests_for_read_protein_test_TestProtein_test_gen_merged.coverage" NAME="Unittests for read_protein_test.TestProtein.test_gen_merged Coverage Results" MODIFIED="1604374931237" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/DNA$read_protein.coverage" NAME="read_protein Coverage Results" MODIFIED="1605403936135" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/DNA$heatmap.coverage" NAME="heatmap Coverage Results" MODIFIED="1604129624513" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/DNA$Unittests_in_util_test_py.coverage" NAME="Unittests in util_test.py Coverage Results" MODIFIED="1605059349549" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/DNA$load_weight.coverage" NAME="load_weight Coverage Results" MODIFIED="1604027561516" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/DNA$Unittests_in_read_protein_test_py.coverage" NAME="Unittests in read_protein_test.py Coverage Results" MODIFIED="1605104829006" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/DNA$Unittests_for_read_protein_test_TestProtein_test_gen_merged.coverage" NAME="Unittests for read_protein_test.TestProtein.test_gen_merged Coverage Results" MODIFIED="1604374931237" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/DNA$Unittests_for_read_protein_test_TestProtein_test_to_number.coverage" NAME="Unittests for read_protein_test.TestProtein.test_to_number Coverage Results" MODIFIED="1605104991696" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/DNA$Unittests_for_read_protein_test_TestProtein_test_to_onehot_matrix.coverage" NAME="Unittests for read_protein_test.TestProtein.test_to_onehot_matrix Coverage Results" MODIFIED="1604630851414" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/DNA$Unittests_for_read_protein_test_TestProtein.coverage" NAME="Unittests for read_protein_test.TestProtein Coverage Results" MODIFIED="1604371454593" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/DNA$read_txt.coverage" NAME="read_txt Coverage Results" MODIFIED="1602056338035" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/DNA$Unittests_for_read_protein_test_TestProtein_test_replace.coverage" NAME="Unittests for read_protein_test.TestProtein.test_replace Coverage Results" MODIFIED="1604365846398" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/DNA$draw_image.coverage" NAME="draw_image Coverage Results" MODIFIED="1604627717130" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/DNA$CNN.coverage" NAME="CNN Coverage Results" MODIFIED="1605102486251" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/DNA$Logger.coverage" NAME="Logger Coverage Results" MODIFIED="1604486320053" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/DNA$Unittests_for_util_test_TestUtil_test_time_spent.coverage" NAME="Unittests for util_test.TestUtil.test_time_spent Coverage Results" MODIFIED="1605059435763" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/DNA$test.coverage" NAME="test Coverage Results" MODIFIED="1605231578062" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
   <component name="debuggerHistoryManager">
     <expressions id="evaluateExpression">
@@ -533,251 +331,5 @@
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
     </expressions>
-  </component>
-  <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/logs/tianjin_a_use_activation_data-4000_acc-0.79/2_roc.jpg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/logs/tianjin_a_use_activation_data-4000_acc-0.79/3_roc.jpg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/logs/tianjin_a_use_activation_data-4000_acc-0.79/4_roc.jpg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/logs/tianjin_a_use_activation_data-4000_acc-0.79/5_roc.jpg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/logs/tianjin_a_use_activation_data-4000_acc-0.79/log.txt">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/logs/MLP_protein_data-76096_acc-0.87/1_roc.jpg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/logs/MLP_protein_data-4000_acc-0.89/1_roc.jpg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/logs/MLP_protein_data-4000_acc-0.89/log.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="266">
-          <caret line="281" column="30" lean-forward="true" selection-start-line="281" selection-start-column="30" selection-end-line="281" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/logs/MLP_protein_data-4000_acc-0.83/every_fold.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/logs/MLP_protein_data-4000_acc-0.83/5_train_val_acc.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/logs/MLP_protein_data-4000_acc-0.80/every_fold.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/logs/MLP_protein_data-4000_acc-0.80/5_train_val_acc.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/logs/MLP_protein_data-4000_acc-0.80/log.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-47963" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/logs/cnn_16kernal_data-4000_acc-0.90/1_roc.jpg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/logs/cnn_16kernal_data-4000_acc-0.90/1_train_val_acc.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/logs/cnn_16kernal_data-4000_acc-0.90/log.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="245">
-          <caret line="3891" column="17" selection-start-line="3891" selection-start-column="17" selection-end-line="3891" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/logs/cnn_16kernal_data-4000_acc-0.90/5_train_val_acc.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/logs/cnn_16kernal_data-4000_acc-0.90/5_roc.jpg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/custom_metrics.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="627">
-          <caret line="34" column="23" selection-start-line="34" selection-start-column="23" selection-end-line="34" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/.PyCharm2019.1/system/python_stubs/404612423/numpy/core/multiarray.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-148">
-          <caret line="1247" column="4" selection-start-line="1247" selection-start-column="4" selection-end-line="1247" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/data/天津英文论文原代码/CT.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="e#0#17#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/data/天津英文论文原代码/AC.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2819" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/data/天津英文论文原代码/188.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1399" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/data/天津英文论文原代码/Two_layers_CNNLSTM.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="342">
-          <caret line="36" selection-start-line="36" selection-end-line="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/.PyCharm2019.1/system/python_stubs/404612423/builtins.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="137">
-          <caret line="3604" column="8" selection-start-line="3604" selection-start-column="8" selection-end-line="3604" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/data/protein_sequence/equal/positive_fixed.pkl" />
-    <entry file="file://$PROJECT_DIR$/data/protein_sequence/equal/negative_fixed_one-line.txt" />
-    <entry file="file://$PROJECT_DIR$/data/protein_sequence/equal/positive_fixed_one-line.txt" />
-    <entry file="file://$APPLICATION_HOME_DIR$/helpers/typeshed/stdlib/3/collections/__init__.pyi">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="137">
-          <caret line="244" column="8" selection-start-line="244" selection-start-column="8" selection-end-line="244" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Logger.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="130">
-          <caret line="27" selection-start-line="27" selection-end-line="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://C:/anaconda/envs/py36_tf/Lib/site-packages/sklearn/ensemble/_bagging.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="369">
-          <caret line="664" column="15" selection-start-line="664" selection-start-column="15" selection-end-line="664" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://C:/anaconda/envs/py36_tf/Lib/site-packages/imblearn/ensemble/_easy_ensemble.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="672">
-          <caret line="215" column="15" lean-forward="true" selection-start-line="215" selection-start-column="15" selection-end-line="215" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/data/protein_sequence/equal/positive_fixed.txt">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/data/protein_sequence/equal/positive_fixed_equal-length.txt" />
-    <entry file="file://$PROJECT_DIR$/data/protein_sequence/equal/negative_fixed_equal-length_number.txt">
-      <provider selected="true" editor-type-id="LargeFileEditor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/data/protein_sequence/equal/positive_fixed_equal-length_number.txt">
-      <provider selected="true" editor-type-id="LargeFileEditor" />
-      <provider editor-type-id="text-editor">
-        <state>
-          <caret selection-end-column="98" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/CNN.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="426">
-          <caret line="133" column="36" selection-start-line="133" selection-start-column="36" selection-end-line="133" selection-end-column="36" />
-          <folding>
-            <element signature="e#74#176#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/logs/tianjin_a_use_activation_data-8992_acc-0.93/log.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-228" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/logs/tianjin_a_use_activation_data-8992_acc-0.93/2_roc.jpg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/logs/tianjin_a_use_activation_data-8992_acc-0.93/1_roc.jpg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/data/protein_sequence/equal/negative_fixed.txt">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/train.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret line="75" column="5" selection-start-line="75" selection-start-column="5" selection-end-line="75" selection-end-column="5" />
-          <folding>
-            <element signature="e#0#15#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/draw_image.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="247">
-          <caret line="16" selection-start-line="16" selection-end-line="16" />
-          <folding>
-            <element signature="e#15#50#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://C:/anaconda/envs/py36_tf/Lib/site-packages/matplotlib/pyplot.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15314">
-          <caret line="813" column="13" selection-start-line="813" selection-start-column="13" selection-end-line="813" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/requirement.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="164">
-          <caret line="93" column="16" selection-start-line="93" selection-start-column="16" selection-end-line="93" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="114">
-          <caret line="6" column="21" lean-forward="true" selection-start-line="6" selection-start-column="21" selection-end-line="6" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/data/DNA_binding/test.data.txt">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/data/DNA_binding/train.data.txt">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/data/DNA_binding/y_train.npy">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/data/DNA_binding/x_train.npy">
-      <provider selected="true" editor-type-id="LargeFileEditor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/read_protein.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="354">
-          <caret line="582" column="24" lean-forward="true" selection-start-line="582" selection-start-column="24" selection-end-line="582" selection-end-column="24" />
-          <folding>
-            <element signature="e#16#25#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
   </component>
 </project>
