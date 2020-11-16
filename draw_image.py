@@ -47,6 +47,7 @@ def show_train_val(train_acc, val_acc, save_path):
     plt.legend(loc='best')
     plt.title("train_acc VS val_acc")
     plt.savefig(save_path)
+    plt.close()
 
 
 def show_loss(loss, save_path):
@@ -62,6 +63,7 @@ def show_loss(loss, save_path):
     plt.ylabel("loss")
     plt.title("loss curve")
     plt.savefig(save_path)
+    plt.close()
 
 def show_acc(acc, save_path):
     """
@@ -78,6 +80,7 @@ def show_acc(acc, save_path):
     plt.ylabel("acc")
     plt.title("acc curve")
     plt.savefig(save_path)
+    plt.close()
 
 
 
@@ -100,6 +103,7 @@ def show_ROC(fpr, tpr, auc, save_path):
     plt.legend(loc='best')
     plt.savefig(save_path)
     #plt.show()
+    plt.close()
 
 def specific_dis(dis_data):
     """

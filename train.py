@@ -32,7 +32,7 @@ def train_model(model_func, save_dir):
     # 配置参数
     #
     k_fold = 10  # 多少折交叉验证
-    one_fold_len = 1000  # 一折多少条数据
+    one_fold_len = 10000  # 一折多少条数据
     batch_size = 16
     every_fold_epochs = 10  # 每一折跑多少个循环
     loss, loss_name = (losses.binary_crossentropy, "binary_crossentropy")
@@ -176,6 +176,7 @@ def train_model(model_func, save_dir):
 
 def calc_auc(y_score, y_val, i):
     """
+    计算 AUC
 
     :param y_score:
     :param y_val:
@@ -190,7 +191,7 @@ def calc_auc(y_score, y_val, i):
     roc_data = [fpr, tpr, thresholds, auc_value]
     # 保存 ROC 数据和图片
     np.save(save_dir + "/%d_fpr_tpr_thresholds_auc.npy" % (i + 1), roc_data)  # 保存 ROC 数据
-    img_path = save_dir + "/%d_roc.jpg" % (i + 1)
+    img_path = save_dir + "/%d_roc.png" % (i + 1)
     show_ROC(fpr, tpr, auc_value, img_path)
 
     return auc_value
@@ -251,7 +252,7 @@ if __name__ == '__main__':
     #
     # 开始训练前的一些准备工作
     #
-    os.environ['TF_CPP_MIN_LOG_LEVEL'] = "1"    # 不显示提示信息
+    #os.environ['TF_CPP_MIN_LOG_LEVEL'] = "1"    # 不显示提示信息
     save_dir = create_dir()                     # 创建一个保存目录
     config_log(save_dir)                        # 配置日志文件
 

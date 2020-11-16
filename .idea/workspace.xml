@@ -2,10 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="eaf8e41a-0d57-4781-b4c8-c9bb391ce5eb" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/DNA.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/DNA.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/requirement.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirement.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.MD" beforeDir="false" afterPath="$PROJECT_DIR$/README.MD" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/draw_image.py" beforeDir="false" afterPath="$PROJECT_DIR$/draw_image.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/106" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/read_protein.py" beforeDir="false" afterPath="$PROJECT_DIR$/read_protein.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/requirement.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/test.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/train.py" beforeDir="false" afterPath="$PROJECT_DIR$/train.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -34,40 +38,6 @@
       </list>
     </option>
   </component>
-  <component name="FindInProjectRecents">
-    <findStrings>
-      <find>train_steps</find>
-      <find>y</find>
-      <find>get_gen</find>
-      <find>type</find>
-      <find>dtype</find>
-      <find>i</find>
-      <find>k_fold</find>
-      <find>convert_dict</find>
-      <find>replace</find>
-      <find>train_size</find>
-      <find>maxlen</find>
-      <find>pool_length</find>
-      <find>lstm_output_size</find>
-      <find>times</find>
-      <find>CBPA</find>
-      <find>find</find>
-      <find>train_model</find>
-      <find>model</find>
-      <find>y_score</find>
-      <find>val_met</find>
-      <find>val_result</find>
-      <find>val_history</find>
-      <find>train_history</find>
-      <find>k</find>
-      <find>initializers</find>
-      <find>y_val</find>
-      <find>real_train_num</find>
-      <find>cPickle</find>
-      <find>to_number_array</find>
-      <find>model_name</find>
-    </findStrings>
-  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="ROOT_SYNC" value="DONT_SYNC" />
@@ -75,6 +45,7 @@
   <component name="ProjectId" id="1kJR8z9617VSCm8kiVNs0yKZgPc" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="C:/Program Files/Git/bin/git.exe" />
@@ -110,7 +81,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.read_protein">
+  <component name="RunManager" selected="Python.train">
     <configuration name="read_protein" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="DNA" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -177,7 +148,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="Unittests for read_protein_test.TestProtein.test_to_number" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
+    <configuration name="Unittests for read_protein_test.TestProtein.test_merged_batch" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
       <module name="DNA" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -188,7 +159,7 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;read_protein_test.TestProtein.test_to_number&quot;" />
+      <option name="_new_target" value="&quot;read_protein_test.TestProtein.test_merged_batch&quot;" />
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
@@ -209,11 +180,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.read_protein" />
         <item itemvalue="Python.train" />
+        <item itemvalue="Python.read_protein" />
         <item itemvalue="Python.test" />
-        <item itemvalue="Python tests.Unittests for read_protein_test.TestProtein.test_to_number" />
         <item itemvalue="Python tests.Unittests in read_protein_test.py" />
+        <item itemvalue="Python tests.Unittests for read_protein_test.TestProtein.test_merged_batch" />
       </list>
     </recent_temporary>
   </component>
@@ -257,7 +228,8 @@
       <workItem from="1605420318217" duration="699000" />
       <workItem from="1605421038930" duration="1403000" />
       <workItem from="1605423151402" duration="2289000" />
-      <workItem from="1605425715206" duration="357000" />
+      <workItem from="1605425715206" duration="6603000" />
+      <workItem from="1605432513568" duration="9867000" />
     </task>
     <task id="LOCAL-00001" summary="实现了 LSTM">
       <created>1605143744672</created>
@@ -266,7 +238,14 @@
       <option name="project" value="LOCAL" />
       <updated>1605143744672</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="test">
+      <created>1605426227018</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1605426227018</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -301,27 +280,47 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="实现了 LSTM" />
-    <option name="LAST_COMMIT_MESSAGE" value="实现了 LSTM" />
+    <MESSAGE value="test" />
+    <option name="LAST_COMMIT_MESSAGE" value="test" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/test.py</url>
+          <line>23</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/read_protein.py</url>
+          <line>367</line>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/DNA$Unittests_for_read_protein_test_TestProtein_test_to_onehot.coverage" NAME="Unittests for read_protein_test.TestProtein.test_to_onehot Coverage Results" MODIFIED="1604022898220" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/DNA$train.coverage" NAME="train Coverage Results" MODIFIED="1605359311737" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/DNA$read_protein.coverage" NAME="read_protein Coverage Results" MODIFIED="1605403936135" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/DNA$train.coverage" NAME="train Coverage Results" MODIFIED="1605453443822" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/DNA$self_check.coverage" NAME="self_check Coverage Results" MODIFIED="1605432347419" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$USER_HOME$/Anaconda3/envs/py3.6_tf-gpu/Lib/site-packages/tensorflow/python/platform" />
+    <SUITE FILE_PATH="coverage/DNA$read_protein.coverage" NAME="read_protein Coverage Results" MODIFIED="1605453418787" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/DNA$heatmap.coverage" NAME="heatmap Coverage Results" MODIFIED="1604129624513" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/DNA$Unittests_in_util_test_py.coverage" NAME="Unittests in util_test.py Coverage Results" MODIFIED="1605059349549" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/DNA$load_weight.coverage" NAME="load_weight Coverage Results" MODIFIED="1604027561516" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/DNA$Unittests_in_read_protein_test_py.coverage" NAME="Unittests in read_protein_test.py Coverage Results" MODIFIED="1605104829006" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/DNA$Unittests_for_read_protein_test_TestProtein_test_gen_merged.coverage" NAME="Unittests for read_protein_test.TestProtein.test_gen_merged Coverage Results" MODIFIED="1604374931237" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/DNA$Unittests_in_read_protein_test_py.coverage" NAME="Unittests in read_protein_test.py Coverage Results" MODIFIED="1605453073374" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/DNA$Unittests_for_read_protein_test_TestProtein_test_to_number_array.coverage" NAME="Unittests for read_protein_test.TestProtein.test_to_number_array Coverage Results" MODIFIED="1605452632230" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/DNA$Unittests_for_read_protein_test_TestProtein_test_to_number.coverage" NAME="Unittests for read_protein_test.TestProtein.test_to_number Coverage Results" MODIFIED="1605104991696" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/DNA$Unittests_for_read_protein_test_TestProtein_test_to_onehot_matrix.coverage" NAME="Unittests for read_protein_test.TestProtein.test_to_onehot_matrix Coverage Results" MODIFIED="1604630851414" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/DNA$Unittests_for_read_protein_test_TestProtein.coverage" NAME="Unittests for read_protein_test.TestProtein Coverage Results" MODIFIED="1604371454593" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/DNA$Unittests_for_read_protein_test_TestProtein.coverage" NAME="Unittests for read_protein_test.TestProtein Coverage Results" MODIFIED="1605452935629" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/DNA$read_txt.coverage" NAME="read_txt Coverage Results" MODIFIED="1602056338035" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/DNA$Unittests_for_read_protein_test_TestProtein_test_replace.coverage" NAME="Unittests for read_protein_test.TestProtein.test_replace Coverage Results" MODIFIED="1604365846398" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/DNA$draw_image.coverage" NAME="draw_image Coverage Results" MODIFIED="1604627717130" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/DNA$CNN.coverage" NAME="CNN Coverage Results" MODIFIED="1605102486251" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/DNA$Logger.coverage" NAME="Logger Coverage Results" MODIFIED="1604486320053" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/DNA$Unittests_for_util_test_TestUtil_test_time_spent.coverage" NAME="Unittests for util_test.TestUtil.test_time_spent Coverage Results" MODIFIED="1605059435763" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/DNA$test.coverage" NAME="test Coverage Results" MODIFIED="1605231578062" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/DNA$Unittests_for_read_protein_test_TestProtein_test_merged_batch.coverage" NAME="Unittests for read_protein_test.TestProtein.test_merged_batch Coverage Results" MODIFIED="1605453028335" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/DNA$test.coverage" NAME="test Coverage Results" MODIFIED="1605453244857" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
   <component name="debuggerHistoryManager">
     <expressions id="evaluateExpression">

@@ -18,7 +18,10 @@ def test(save_dir):
     rename_dir(save_dir, "testMode", 999, 0.99)
 
 if __name__ == '__main__':
-    with open("./data/protein_sequence/equal/positive_fixed_onehot.pkl")
+    with open("./data/protein_sequence/equal/positive_fixed_onehot.pkl", "rb") as file:
+        data = cPickle.load(file)
+        print(data.shape)
+        print(data[0])
 
 
 

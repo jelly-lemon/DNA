@@ -11,7 +11,7 @@ from math import floor
 
 convert_dict = {'A': 1, 'C': 2, 'D': 3, 'E': 4, 'F': 5, 'G': 6, 'H': 7, 'I': 8, 'K': 9,
                 'L': 10, 'M': 11, 'N': 12, 'P': 13, 'Q': 14, 'R': 15, 'S': 16, 'T': 17,
-                'V': 18, 'W': 19, 'Y': 20, 'X':0}
+                'V': 18, 'W': 19, 'Y': 20}
 
 illegal_char = {'B', 'J', 'O', 'U', 'X', 'Z'}
 
@@ -47,7 +47,10 @@ def to_number_array(original_str: str):
     #
     number_arr = []
     for c in new_str:
-        number_arr += [convert_dict[c]]
+        if c == 'X':
+            number_arr.append(0)
+        else:
+            number_arr += [convert_dict[c]]
 
     number_arr = np.array(number_arr, dtype=np.uint8)
     return number_arr
@@ -72,7 +75,7 @@ def to_onehot_matrix(original_str: str) -> np.ndarray:
     #
     # 检查
     #
-    if original_str in ("", "\n"):
+    if original_str in ("", "\n", "\r"):
         raise ValueError("传入的蛋白质序列为空串")
 
     #
@@ -93,17 +96,20 @@ def to_onehot_matrix(original_str: str) -> np.ndarray:
     #
     # 转为 One-hot 矩阵
     #
-    onehot_mat = None
+    onehot_mat = []
     for c in new_str:
         try:
             vct = to_vector(c)  # 将字母转化为 one-hot 向量
         except ValueError:
             vct = to_vector('X')  # 遇到非氨基酸字母，就处理为 'X'
 
-        if onehot_mat is None:
-            onehot_mat = vct
-        else:
-            onehot_mat = np.concatenate((onehot_mat, vct))
+        vct = vct.reshape((20,))
+        onehot_mat.append(vct)
+        # if onehot_mat is None:
+        #     onehot_mat = vct
+        # else:
+        #     onehot_mat = np.concatenate((onehot_mat, vct))
+    onehot_mat = np.array(onehot_mat)
 
     return onehot_mat
 
@@ -587,6 +593,4 @@ def save_as_number(file_path):
 
 
 if __name__ == '__main__':
-    # save_as_number("./data/protein_sequence/equal/negative_fixed.txt")
-    save_as_onehot("./data/protein_sequence/equal/positive_fixed.txt")
-    pass
+    save_as_onehot("./data/protein_sequence/unbalanced/unbalance_no_DNA-binding_fixed.txt")
