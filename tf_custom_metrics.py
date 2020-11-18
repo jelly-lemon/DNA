@@ -39,7 +39,7 @@ def Precision(y_true, y_pred):
     tp = K.sum(K.round(K.clip(y_true * y_pred, 0, 1)))  # true positives
     # pp = TP + FP
     tp_fp = K.sum(K.round(K.clip(y_pred, 0, 1))) # predicted positives
-    precision = tp/(tp_fp+ K.epsilon())
+    precision = tp/(tp_fp + K.epsilon())
     return precision
 
 def Recall(y_true, y_pred):

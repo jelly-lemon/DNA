@@ -17,7 +17,7 @@ illegal_char = {'B', 'J', 'O', 'U', 'X', 'Z'}
 
 def to_number_array(original_str: str):
     """
-    将蛋白质序列转为数字数组
+    将蛋白质序列转为数字数组，不足 1000 则补齐
     :param original_str:
     :return:
     """
@@ -391,6 +391,71 @@ def merged_data_arr():
 
         return x, y
 
+def get_pkl_data(file_path):
+    with open(file_path, "rb") as file:
+        data = cPickle.load(file)
+        return data
+def merged_pkl_data_2():
+    positive_path = "./data/protein_sequence/equal/positive_fixed_number-arr.pkl"  # 正数据集
+    negative_path_1 = "./data/protein_sequence/unbalanced/unbalance_no_DNA-binding_fixed_1_number-arr.pkl"  # 负数据集
+    negative_path_2 = "./data/protein_sequence/unbalanced/unbalance_no_DNA-binding_fixed_2_number-arr.pkl"
+    negative_path_3 = "./data/protein_sequence/unbalanced/unbalance_no_DNA-binding_fixed_3_number-arr.pkl"
+    negative_path_4 = "./data/protein_sequence/unbalanced/unbalance_no_DNA-binding_fixed_4_number-arr.pkl"
+
+    x = get_pkl_data(positive_path)
+    y = np.ones((len(x),), dtype=np.uint8)
+
+    x1 = get_pkl_data(negative_path_1)
+    y1 = np.zeros((len(x1),), dtype=np.uint8)
+    x2 = get_pkl_data(negative_path_2)
+    y2 = np.zeros((len(x2),), dtype=np.uint8)
+    x3 = get_pkl_data(negative_path_3)
+    y3 = np.zeros((len(x3),), dtype=np.uint8)
+    x4 = get_pkl_data(negative_path_4)
+    y4 = np.zeros((len(x4),), dtype=np.uint8)
+
+    x = np.concatenate((x, x1, x2, x3, x4))
+    y = np.concatenate((y, y1, y2, y3, y4))
+
+    x, y = shuffle_data(x, y)
+    x = np.array(x)
+    y = np.array(y)  # 数据类型是 ndarray
+
+    return x, y
+
+
+def merged_pkl_data(positive_path = None, negative_path = None, num = None):
+    """
+    返回合并后的 pkl 数据
+
+    :param positive_path:
+    :param negative_path:
+    :param num:
+    :return:
+    """
+    if positive_path is None:
+        positive_path = "./data/protein_sequence/equal/positive_fixed_onehot.pkl"  # 正数据集
+    if negative_path is None:
+        negative_path = "./data/protein_sequence/unbalanced/unbalance_no_DNA-binding_fixed_onehot.pkl"  # 负数据集
+
+    x1 = get_pkl_data(positive_path)
+    y1 = np.ones((len(x1),), dtype=np.uint8)
+    x2 = get_pkl_data(negative_path)
+    y2 = np.zeros((len(x2),), dtype=np.uint8)
+    x = np.concatenate((x1, x2))
+    y = np.concatenate((y1, y2))
+
+    #
+    # 打乱数据
+    #
+    x, y = shuffle_data(x, y)
+    x = np.array(x)
+    y = np.array(y)  # 数据类型是 ndarray
+
+    if num is not None and num < y.shape[0]:
+        return x[:num], y[:num]
+
+    return x, y
 
 def merged_data(positive_path = None, negative_path = None, num = None):
     """
@@ -593,4 +658,9 @@ def save_as_number(file_path):
 
 
 if __name__ == '__main__':
-    save_as_onehot("./data/protein_sequence/unbalanced/unbalance_no_DNA-binding_fixed.txt")
+    # save_as_number("./data/protein_sequence/unbalanced/unbalance_no_DNA-binding_fixed_1.txt")
+    # save_as_number("./data/protein_sequence/unbalanced/unbalance_no_DNA-binding_fixed_2.txt")
+    # save_as_number("./data/protein_sequence/unbalanced/unbalance_no_DNA-binding_fixed_3.txt")
+    # save_as_number("./data/protein_sequence/unbalanced/unbalance_no_DNA-binding_fixed_4.txt")
+
+    pass
